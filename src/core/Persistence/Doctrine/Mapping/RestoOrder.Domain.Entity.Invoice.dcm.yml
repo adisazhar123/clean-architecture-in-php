@@ -1,0 +1,20 @@
+RestoOrder\Domain\Entity\Invoice:
+  type: entity
+  table: invoice
+  id:
+    id:
+      type: bigint
+      generator:
+        strategy: IDENTITY
+  fields:
+    invoiceDate:
+      column: invoice_date
+      type: date
+    total:
+      type: decimal
+      precision: 10
+      scale: 2
+  manyToOne:
+    order:
+      targetEntity: RestoOrder\Domain\Entity\Order
+      inversedBy: invoices

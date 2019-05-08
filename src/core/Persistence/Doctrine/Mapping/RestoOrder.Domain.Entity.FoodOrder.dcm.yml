@@ -1,0 +1,19 @@
+RestoOrder\Domain\Entity\FoodOrder:
+  type: entity
+  table: food_order
+  id:
+    id:
+      type: bigint
+      generator:
+        strategy: IDENTITY
+  fields:
+    order:
+      column: order_id
+      type: bigint
+    food:
+      column: food_id
+      type: bigint
+  manyToOne:
+    order:
+      targetEntity: RestoOrder\Domain\Entity\Order
+      inversedBy: invoices

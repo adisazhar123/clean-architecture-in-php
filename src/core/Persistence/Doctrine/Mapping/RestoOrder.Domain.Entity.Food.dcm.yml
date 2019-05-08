@@ -1,0 +1,17 @@
+RestoOrder\Domain\Entity\Food:
+  type: entity
+  table: food
+  id:
+    id:
+      type: bigint
+      generator:
+        strategy: IDENTITY
+  fields:
+    name:
+      type: string
+      length: 255
+    description:
+      type: string
+      length: 500
+    price:
+      type: decimal

@@ -1,0 +1,33 @@
+RestoOrder\Domain\Entity\Order:
+  type: entity
+  table: "`order`"
+  id:
+    id:
+      type: bigint
+      generator:
+        strategy: IDENTITY
+  fields:
+    orderNumber:
+      column: order_number
+      length: 20
+      generator:
+        strategy: IDENTITY
+    description:
+    total:
+      type: decimal
+      precision: 10
+      scale: 2
+  manyToOne:
+    customer:
+      targetEntity: RestoOrder\Domain\Entity\Customer
+  manyToMany:
+    foods:
+      targetEntity: RestoOrder\Domain\Entity\Food
+      joinTable:
+        name: food_order
+        joinColumns:
+          order_id:
+            referencedColumnName: id
+        inverseJoinColumns:
+          food_id:
+            referencedColumnName: id

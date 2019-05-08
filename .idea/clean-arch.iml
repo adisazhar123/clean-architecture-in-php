@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/core/Domain" isTestSource="false" packagePrefix="RestoOrder\Domain\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/FactoryMethod" isTestSource="false" packagePrefix="FactoryMethod\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/Domain/Entity" isTestSource="false" packagePrefix="RestoOrder\Domain\Entity\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/Domain/Repository" isTestSource="false" packagePrefix="RestoOrder\Domain\Repository\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/Persistence" isTestSource="false" packagePrefix="RestoOrder\Persistence\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/Domain/Factory" isTestSource="false" packagePrefix="RestoOrder\Domain\Factory\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core" isTestSource="false" packagePrefix="RestoOrder\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/Persistence/Doctrine" isTestSource="false" packagePrefix="RestoOrder\Persistence\Doctrine\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/Persistence/Doctrine/Repository" isTestSource="false" packagePrefix="RestoOrder\Persistence\Repository\" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/container-interop/container-interop" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/annotations" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/collections" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/common" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/doctrine-module" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/doctrine-orm-module" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/event-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/orm" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/persistence" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/reflection" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/phpoption/phpoption" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/symfony/contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/vlucas/phpdotenv" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-authentication" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-config" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-escaper" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-eventmanager" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-filter" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-form" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-http" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-hydrator" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-inputfilter" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-json" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-loader" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-modulemanager" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-mvc" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-paginator" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-router" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-servicemanager" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-stdlib" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-uri" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-validator" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/zendframework/zend-view" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

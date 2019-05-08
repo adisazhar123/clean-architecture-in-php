@@ -1,0 +1,31 @@
+{
+    "name": "adisazhar/resto-order",
+    "description": "An example of Clean Architecture in PHP",
+    "type": "project",
+    "authors": [
+        {
+            "name": "adis azhar",
+            "email": "adisazhar123@gmail.com"
+        }
+    ],
+    "require": {
+        "doctrine/orm": "^2.6",
+        "symfony/yaml": "^4.2",
+        "doctrine/doctrine-orm-module": "^2.1",
+        "vlucas/phpdotenv": "^3.3",
+        "jms/serializer": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "RestoOrder\\": "core/",
+            "RestoOrder\\Domain\\": "core/Domain/",
+            "RestoOrder\\Domain\\Repository\\": "core/Domain/Repository/",
+            "RestoOrder\\Domain\\Entity\\": "core/Domain/Entity/",
+            "RestoOrder\\Domain\\Factory\\": "core/Domain/Factory/",
+            "RestoOrder\\Persistence\\": "core/Persistence/",
+            "RestoOrder\\Persistence\\Doctrine\\": "core/Persistence/Doctrine/",
+            "RestoOrder\\Persistence\\Repository\\": "core/Persistence/Doctrine/Repository",
+            "FactoryMethod\\":"FactoryMethod/"
+        }
+    }
+}

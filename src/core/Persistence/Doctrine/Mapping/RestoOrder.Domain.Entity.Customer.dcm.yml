@@ -1,0 +1,13 @@
+RestoOrder\Domain\Entity\Customer:
+  type: entity
+  table: customer
+  id:
+    id:
+      type: bigint
+      generator:
+        strategy: IDENTITY
+  fields:
+    name:
+      length: 255
+    phone:
+      length: 20
