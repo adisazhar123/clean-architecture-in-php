@@ -17,17 +17,15 @@ RestoOrder\Domain\Entity\Order:
       type: decimal
       precision: 10
       scale: 2
+  
   manyToOne:
     customer:
       targetEntity: RestoOrder\Domain\Entity\Customer
-  manyToMany:
+
+  oneToMany:
     foods:
-      targetEntity: RestoOrder\Domain\Entity\Food
-      joinTable:
-        name: food_order
-        joinColumns:
-          order_id:
-            referencedColumnName: id
-        inverseJoinColumns:
-          food_id:
-            referencedColumnName: id
+      targetEntity: RestoOrder\Domain\Entity\FoodOrder
+      mappedBy: order
+
+
+

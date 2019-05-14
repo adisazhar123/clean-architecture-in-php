@@ -6,14 +6,13 @@ RestoOrder\Domain\Entity\FoodOrder:
       type: bigint
       generator:
         strategy: IDENTITY
-  fields:
-    order:
-      column: order_id
-      type: bigint
-    food:
-      column: food_id
-      type: bigint
   manyToOne:
     order:
       targetEntity: RestoOrder\Domain\Entity\Order
-      inversedBy: invoices
+      inversedBy: foods
+      joinColumns:
+        order_id:
+         referencedColumnName: id
+    food:
+      targetEntity: RestoOrder\Domain\Entity\Food
+      inversedBy: orders

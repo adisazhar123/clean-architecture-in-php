@@ -49,6 +49,26 @@
       <path value="$PROJECT_DIR$/src/vendor/symfony/contracts" />
       <path value="$PROJECT_DIR$/src/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/src/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/src/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/src/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/src/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/src/vendor/jms/serializer" />
+      <path value="$PROJECT_DIR$/src/vendor/phenx/php-svg-lib" />
+      <path value="$PROJECT_DIR$/src/vendor/hoa/event" />
+      <path value="$PROJECT_DIR$/src/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/src/vendor/hoa/compiler" />
+      <path value="$PROJECT_DIR$/src/vendor/hoa/visitor" />
+      <path value="$PROJECT_DIR$/src/vendor/hoa/stream" />
+      <path value="$PROJECT_DIR$/src/vendor/hoa/math" />
+      <path value="$PROJECT_DIR$/src/vendor/hoa/protocol" />
+      <path value="$PROJECT_DIR$/src/vendor/hoa/file" />
+      <path value="$PROJECT_DIR$/src/vendor/hoa/iterator" />
+      <path value="$PROJECT_DIR$/src/vendor/hoa/regex" />
+      <path value="$PROJECT_DIR$/src/vendor/hoa/zformat" />
+      <path value="$PROJECT_DIR$/src/vendor/hoa/consistency" />
+      <path value="$PROJECT_DIR$/src/vendor/hoa/exception" />
+      <path value="$PROJECT_DIR$/src/vendor/hoa/ustring" />
     </include_path>
   </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7" />
 </project>

@@ -2,14 +2,22 @@
 
 namespace App\Client;
 
-use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\Tools\Setup;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 use Phalcon\Loader;
 use Phalcon\Mvc\View;
 use Phalcon\DiInterface;
+use Doctrine\ORM\Tools\Setup;
+use Doctrine\ORM\EntityManager;
 use Phalcon\Mvc\View\Engine\Volt;
 use Phalcon\Mvc\ModuleDefinitionInterface;
 use RestoOrder\Domain\Repository\CustomerRepositoryInterface;
+use RestoOrder\UseCase\AddFood\AddFoodUseCase;
+use RestoOrder\UseCase\AllFoods\AllFoodsUseCase;
+use RestoOrder\UseCase\AllOrders\AllOrdersUseCase;
+use RestoOrder\UseCase\FindFood\FindFoodUseCase;
+use RestoOrder\UseCase\GenerateReceipt\GenerateReceiptUseCase;
+use RestoOrder\UseCase\UpdateFood\UpdateFoodUseCase;
 
 class Module implements ModuleDefinitionInterface
 {   
@@ -87,6 +95,103 @@ class Module implements ModuleDefinitionInterface
             $entityManager = $this->get('entityManager');
             return new \RestoOrder\Persistence\Doctrine\Repository\OrderRepository($entityManager);
         });
+
+        $di->setShared('foodOrderRepository', function() {
+            $entityManager = $this->get('entityManager');
+            return new \RestoOrder\Persistence\Doctrine\Repository\FoodOrderRepository($entityManager);
+        });
+
+        $di->set("createOrderUseCase", function() {
+            $orderRepository = $this->get('orderRepository');
+            $customerRepository = $this->get('customerRepository');
+            $foodOrderRepository = $this->get('foodOrderRepository');
+            $foodRepository = $this->get('foodRepository');
+
+            return new \RestoOrder\UseCase\CreateOrder\CreateOrderUseCase($customerRepository, $foodRepository, $orderRepository, $foodOrderRepository);
+        });
+
+        $di->set('findOrderUseCase', function() {
+            $orderRepository = $this->get('orderRepository');
+            return new \RestoOrder\UseCase\FindOrder\FindOrderUseCase($orderRepository);
+        });
+
+        $di->set('generateReceiptUseCase', function() {
+            $orderRepository = $this->get('orderRepository');
+            $pdfGenerator = $this->get('pdfGenerator');
+            return new GenerateReceiptUseCase($orderRepository, $pdfGenerator);
+        });
+
+        $di->set('allFoodsUseCase', function() {
+            $foodRepository = $this->get('foodRepository');
+            return new AllFoodsUseCase($foodRepository);
+        });
+
+        $di->set('allOrdersUseCase', function() {
+            $orderRepository = $this->get('orderRepository');
+            return new AllOrdersUseCase($orderRepository);
+        });
+
+        $di->setShared('orderService', function() {
+            $orderRepository = $this->get('orderRepository');
+            $customerRepository = $this->get('customerRepository');
+            $foodOrderRepository = $this->get('foodOrderRepository');
+            $foodRepository = $this->get('foodRepository');
+            $createOrderUc = $this->get('createOrderUseCase');
+            $findOrderUc = $this->get('findOrderUseCase');
+            $generateReceiptUc = $this->get('generateReceiptUseCase');
+            $allOrdersUc = $this->get('allOrdersUseCase');
+
+            return new \RestoOrder\Domain\Service\OrderService($customerRepository, $foodRepository, $orderRepository, $foodOrderRepository, $createOrderUc, $findOrderUc, $generateReceiptUc, $allOrdersUc);
+        });
+
+        $di->set('addFoodUseCase', function() {
+           $foodRepo = $this->get('foodRepository');
+           return new AddFoodUseCase($foodRepo);
+        });
+
+        $di->set('findFoodUseCase', function() {
+            $foodRepo = $this->get('foodRepository');
+            return new FindFoodUseCase($foodRepo);
+        });
+
+        $di->set('updateFoodUseCase', function() {
+            $foodRepo = $this->get('foodRepository');
+            return new UpdateFoodUseCase($foodRepo);
+        });
+
+        $di->setShared('foodService', function() {
+            $foodRepository = $this->get('foodRepository');
+            $foodUc = $this->get('allFoodsUseCase');
+            $addFoodUc = $this->get('addFoodUseCase');
+            $findFoodUc = $this->get('findFoodUseCase');
+            $updateFoodUc = $this->get('updateFoodUseCase');
+            return new \RestoOrder\Domain\Service\FoodService($foodRepository, $foodUc, $addFoodUc, $findFoodUc, $updateFoodUc);
+        });
+
+        $di->setShared('jmsSerializer', function() {
+            $serializer = \JMS\Serializer\SerializerBuilder::create()->build();
+            return $serializer;
+        });
+
+        $di->setShared('serializer', function() {
+            $jmsSerializer = $this->get('jmsSerializer');
+            return new \RestoOrder\Response\Serializer\JmsSerializer($jmsSerializer);
+        });
+
+        $di->setShared('domPdf', function() {
+            $options = new Options();
+            $options->set('defaultFont', 'Courier');
+            $dompdf = new Dompdf($options);
+
+            return $dompdf;
+        });
+
+        $di->setShared('pdfGenerator', function() {
+            $dompdf = $this->get('domPdf');
+
+            return new \RestoOrder\Response\Document\DomPdfDocumentGenerator($dompdf);
+        });
+        
 
     }
 }

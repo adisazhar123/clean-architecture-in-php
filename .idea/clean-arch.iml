@@ -8,9 +8,11 @@
       <sourceFolder url="file://$MODULE_DIR$/src/core/Domain/Repository" isTestSource="false" packagePrefix="RestoOrder\Domain\Repository\" />
       <sourceFolder url="file://$MODULE_DIR$/src/core/Persistence" isTestSource="false" packagePrefix="RestoOrder\Persistence\" />
       <sourceFolder url="file://$MODULE_DIR$/src/core/Domain/Factory" isTestSource="false" packagePrefix="RestoOrder\Domain\Factory\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/UseCase" isTestSource="false" packagePrefix="RestoOrder\UseCase\" />
       <sourceFolder url="file://$MODULE_DIR$/src/core" isTestSource="false" packagePrefix="RestoOrder\" />
       <sourceFolder url="file://$MODULE_DIR$/src/core/Persistence/Doctrine" isTestSource="false" packagePrefix="RestoOrder\Persistence\Doctrine\" />
       <sourceFolder url="file://$MODULE_DIR$/src/core/Persistence/Doctrine/Repository" isTestSource="false" packagePrefix="RestoOrder\Persistence\Repository\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/core/UseCase/CreateOrder" isTestSource="false" packagePrefix="RestoOrder\UseCase\CreateOrder\" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/container-interop/container-interop" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/annotations" />
@@ -27,10 +29,29 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/orm" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/persistence" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/doctrine/reflection" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/dompdf/dompdf" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/hoa/compiler" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/hoa/consistency" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/hoa/event" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/hoa/exception" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/hoa/file" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/hoa/iterator" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/hoa/math" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/hoa/protocol" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/hoa/regex" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/hoa/stream" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/hoa/ustring" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/hoa/visitor" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/hoa/zformat" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/jms/metadata" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/jms/serializer" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/phenx/php-font-lib" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/phenx/php-svg-lib" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/phpoption/phpoption" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/sabberworm/php-css-parser" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/symfony/console" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/symfony/contracts" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/symfony/polyfill-ctype" />

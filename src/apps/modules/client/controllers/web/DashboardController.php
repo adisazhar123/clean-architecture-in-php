@@ -3,98 +3,102 @@
 namespace App\Client\Controllers\Web;
 
 use Phalcon\Mvc\Controller;
-use RestoOrder\Domain\Entity\Food;
-use RestoOrder\Domain\Entity\Order;
-use RestoOrder\Domain\Entity\Customer;
+
 
 class DashboardController extends Controller
 {
 
-    protected $customerRepository;
-    protected $foodRepository;
-    private $orderRepository;
+
+    // services
+    protected $orderService;
+    protected $foodService;
+    protected $serializer;
 
     public function initialize()
     {
-        $this->customerRepository = $this->di->get('customerRepository');
-        $this->foodRepository = $this->di->get('foodRepository');
-        $this->orderRepository = $this->di->get('orderRepository');
+        $this->orderService = $this->di->get('orderService');
+        $this->foodService = $this->di->get('foodService');
+        $this->serializer = $this->di->get('serializer');
     }
     
     public function indexAction()
     {        
-        $customers = $this->customerRepository->getAll();
-        $foods = $this->foodRepository->getAll();
 
-        $this->view->viewModel = [
-            'customers' => $customers, 
-            'foods' => $foods
-        ];
-        
+        $foods = $this->foodService->getAvailableFoods();
+        $this->view->foods = $foods;
+
         return $this->view->pick('dashboard/index');
     }
 
     public function createOrderAction()
     {
-        $cus = $this->request->getPost('customer');
+        $createdOrderResponse = $this->orderService->createOrder($_POST);
+        $createdOrderResponseJson = $this->serializer->toJson($createdOrderResponse);
+        $this->response->setStatusCode(201, $createdOrderResponse->getHttpMessage());
+        $this->response->setContent($createdOrderResponseJson);
+        $this->response->send();
 
-        $customer = new Customer();
-        $customer->setName($cus['name']);
-        $customer->setPhone($cus['phone']);
-        
-        $foods = $this->request->getPost('foods');        
-
-        $total = 0;
-
-        $order = new Order();
-
-        foreach($foods as $food) {
-            // find Food entity from DB
-            $f = $this->foodRepository->getById($food['id']);
-            
-            // calculate total price
-            $food_total = $food['amount'] * $food['price'];
-            $total += $food_total;
-            
-            // need to attach the Food entity
-            $order->addFood($f);
-        }
-        
-        $this->customerRepository->persist($customer);        
-        
-        $order->setCustomer($customer);
-        $order->setDescription($cus['description']);
-        $order->setTotal($total);
-        $order->setOrderNumber('ADIS' . time());
-        $f->addOrder($order);
-        $this->orderRepository->persist($order);
-        
-        return 'ok';
     }
 
     public function ordersAction()
-    {        
-        $orders = $this->orderRepository->getAll();
+    {
+        $orders = $this->orderService->allOrder();
         $this->view->orders = $orders;
         return $this->view->pick('dashboard/orders');
     }
 
-    public function generateReceiptAction()
+    public function generateReceiptAction($order_id)
     {
-        
+        $receipt = $this->orderService->generateReceipt($order_id);
+        $receipt->download();
+    }
+
+    public function renderReceiptTemplateAction()
+    {
+        return $this->view->pick('dashboard/generated-receipt');
     }
 
     public function findOrderAction($order_id)
     {
-        $order = $this->orderRepository->getById($order_id);
-        $orderViewModel = [
-            'foods' => $order->getFoods()->toArray()
-        ];
+        $order = $this->orderService->findOrder($order_id);
+        $orderJson = $this->serializer->toJson($order);
+     
+        $this->response->setContent($orderJson);
+        $this->response->send();
+    }
 
-        $serializer = \JMS\Serializer\SerializerBuilder::create()->build();
-        $jsonContent = $serializer->serialize($orderViewModel, 'json');
+    public function foodsAction()
+    {
+        $foods = $this->foodService->getAvailableFoods();
+        $this->view->foods = $foods;
+        $this->view->pick('dashboard/foods');
+    }
 
-        $this->response->setContent($jsonContent);
+    public function addFoodAction()
+    {
+        $food = $this->foodService->addFood($_POST);
+        $foodJson = $this->serializer->toJson($food);
+
+        $this->response->setContent($foodJson);
+        $this->response->send();
+    }
+
+    public function findFoodAction($foodId)
+    {
+        $food = $this->foodService->findFood($foodId);
+        $foodJson = $this->serializer->toJson($food);
+
+        $this->response->setContent($foodJson);
+        $this->response->send();
+    }
+
+    public function updateFoodAction($foodId)
+    {
+        $food = $this->foodService->updateFood($foodId, ['name' => $this->request->getPut('name'), 'description' => $this->request->getPut('description'),
+            'price' => $this->request->getPut('price')]);
+        $foodJson = $this->serializer->toJson($food);
+
+        $this->response->setContent($foodJson);
         $this->response->send();
     }
 
@@ -102,3 +106,4 @@ class DashboardController extends Controller
 
 
 ?>
+

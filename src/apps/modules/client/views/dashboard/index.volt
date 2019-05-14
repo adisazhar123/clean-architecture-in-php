@@ -1,170 +1,231 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet">
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
+    <title>Resto Adis</title>
+
+</head>
+
+<body>
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+<nav class="navbar navbar-expand-lg navbar-dark primary-color-dark mb-3">
         <div class="container">
             <a class="navbar-brand" href="#">Adis Resto</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/orders">Orders</a>
-                </li>                
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/foods">Foods </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/orders">Orders</a>
+                    </li>
                 </ul>
             </div>
-        </div>        
+        </div>
     </nav>
 
     <div class="container">
         <div class="foods">
             <div class="row">
-                {% for food in viewModel['foods'] %}
-                    <div class="col-md-3">
-                        <div class="card food mb-3">
-                            <div class="card-body food" id='{{ food.getId() }}'>
-                                <h5 class="card-title">{{ food.getName() }}</h5>
-                                <p class="card-text">{{ food.getDescription() }}</p>
-                               <h5>Rp.</h5> <h5 class="price">{{food.getPrice()}}</h5>
-                            </div>
-                            <div class="card-footer">                                
-                                <button btn-food-id='{{ food.getId() }}' class="btn btn-primary purchase">Purchase</button>
+                <h3>Menu</h3>
+            </div>
+            <div class="row">
+                {% for food in foods.getFoods() %}
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100 food mb-3">
+                        <div class="card-body food" id='{{ food['food_id'] }}'>
+                            <h5 class="card-title">{{ food['name'] }}</h5>
+                            <p class="card-text">{{ food['description'] }}</p>
+                            <h5>Rp.</h5>
+                            <h5 class="price">{{ foods.formatToRupiah(food['price']) }}</h5>
+                        </div>
+                        <div class="card-footer">
+                            <button btn-food-id='{{ food['food_id'] }}' class="btn btn-primary purchase">Purchase</button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    In Cart
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="row in-cart">
+                                    <p>Empty</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                {% endfor %}
-            </div>    
-        </div>
-    </div>
 
-    <div class="container">
-        <div class="row">
-            <h3>In Cart</h3>
-        </div>
-        <div class="row">
-            <div class="in-cart">
-               <div class="card food-cart">
-                   
-               </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <h3>Order Details</h3>
-        </div>
-
-        <div class="row">         
-            <div class="col-md-6">
-                <div class="form">
-                    <form action="#">
-                        <div class="form-group">
-                            <label for="">Customer Name</label>
-                            <input type="text" class="form-control" name="customer_name">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Order Details
+                                </button>
+                            </h5>
                         </div>
-                        <div class="form-group">
-                            <label for="">Phone Number</label>
-                            <input type="text" class="form-control" name="customer_phone">
-                        </div>                        
-                        <div class="form-group">
-                            <textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
+
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="col-md-6">
+                                    <div class="form">
+                                        <form action="#">
+                                            <div class="form-group">
+                                                <label for="">Customer Name</label>
+                                                <input type="text" class="form-control" name="customer_name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Phone Number</label>
+                                                <input type="text" class="form-control" name="customer_phone">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Order Description</label>
+                                                <textarea class="form-control" name="description" id="" cols="30"
+                                                    rows="10"></textarea>
+                                            </div>
+                                            <button type="button" class="btn btn-primary buy-meal">Buy Meal</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <button type="button" class="btn btn-primary buy-meal">Buy Meal</button>
-                    </form>
+                    </div>
                 </div>
-            </div>                   
+            </div>
         </div>
     </div>
-    
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <br>
 
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
     <script>
-    $(document).ready(function() {
+        $(document).ready(function () {
+            let foods = [];
 
-        let foods = [];
+            $(".purchase").click(function () {
+                let foodId = $(this).attr('btn-food-id');
+                
 
-        $(".purchase").click(function() {
-            let foodId = $(this).attr('btn-food-id');
-            console.log(foodId);
+                let inCart = foods.find(fd => fd.id == foodId);
+                
+                if (inCart) {
+                    inCart.amount = parseInt(inCart.amount) + 1;
+                } else {
 
-            let inCart = foods.find(fd => fd.id == foodId);
-            // console.log(inCart);
-            if (inCart) {
-                inCart.amount = parseInt(inCart.amount) + 1;                
-            } else {
+                    let food = {
+                        id: foodId,
+                        name: $(".food#" + foodId + " .card-title").text(),
+                        price: $(".food#" + foodId + " .price").text(),
+                        amount: 1
+                    };
 
-                let food = {
-                    id: foodId,
-                    name: $(".food#" + foodId + " .card-title").text(),
-                    price: $(".food#" + foodId + " .price").text(),
-                    amount: 1
+                    foods.push(food);
+                }
+
+                const foodCart = $(".in-cart");
+                foodCart.html("");
+
+                foods.map((fd, idx) => {
+                    foodCart.append(
+                        `<div class="col-md-3 mb-3">
+                        <div class="card h-100 food-cart">
+                        <div class="card-body customer-food">
+                        <h4>${fd.name}</h4>
+                        <h5>${fd.amount} x</h5>
+                        </div>
+                    </div>
+                    </div>`
+                    );
+                });
+
+            });
+
+            function resetMealOrder() {
+                foods = [];
+                const foodCart = $(".in-cart");
+                foodCart.html("Empty");
+                $("input[name='customer_name']").val("");
+                $("input[name='customer_phone']").val("");
+                $("textarea[name='description']").val("");
+            }
+
+
+            $(".buy-meal").click(async function () {
+                let customer = {
+                    name: $("input[name='customer_name']").val(),
+                    phone: $("input[name='customer_phone']").val(),
+                    description: $("textarea[name='description']").val(),
                 };
 
-                foods.push(food);                
-            }
+                try {
+                    await $.ajax({
+                        url: '/orders',
+                        method: 'POST',
+                        data: {
+                            customer,
+                            foods
+                        },
+                        dataType: 'json'
+                    });
+                } catch (error) {
+                    console.log(error);
+                    console.log("ERROR")
+                    return;
+                }
 
-            const foodCart = $(".food-cart");
-            foodCart.html("");
+                resetMealOrder();
+                alertify.success('Success ordering customer a meal!');
 
-            foods.map((fd, idx) => {
-                foodCart.append(
-                    `<div class="card-body customer-food">
-                       <h4>${fd.name}</h4>
-                       <h5>${fd.amount} x</h5>
-                    </div>`
-                   );
             });
-            
-            // foodCart
-            console.log(foods);
-
         });
-
-
-        $(".buy-meal").click(async function() {
-            let customer = {
-                name: $("input[name='customer_name']").val(),
-                phone: $("input[name='customer_phone']").val(),
-                description: $("textarea[name='description']").val(),
-            };
-
-            console.log({customer, foods});
-
-            try {
-                await $.ajax({
-                    url: '/orders',
-                    method: 'POST',
-                    data: {customer, foods},
-                    dataType: 'json'
-                });                
-            } catch (error) {
-                console.log(error);
-                return;
-            }
-        });
-    });
     </script>
 
-  </body>
+</body>
+
 </html>

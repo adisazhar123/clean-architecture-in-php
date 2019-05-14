@@ -6,9 +6,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet">
 
     <title>Hello, world!</title>
 </head>
@@ -16,7 +19,7 @@
 <body>
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+<nav class="navbar navbar-expand-lg navbar-dark primary-color-dark mb-3">
         <div class="container">
             <a class="navbar-brand" href="#">Adis Resto</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -25,10 +28,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/foods">Foods </a>
+                    </li>
+                    <li class="nav-item active">
                         <a class="nav-link" href="/orders">Orders</a>
                     </li>
                 </ul>
@@ -51,18 +57,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for order in orders %}
+                            {% for order in orders.getOrders() %}
                             <tr>
                                 <th scope="row">1</th>
-                                <td>{{ order.getCustomer().getName() }}</td>
-                                <td>{{ order.getDescription() }}</td>
-                                <td>{{ order.getTotal() }}</td>
+                                <td>{{ order['customer'] }}</td>
+                                <td>{{ order['description'] }}</td>
+                                <td>{{ order['price'] }}</td>
                                 <td>
-                                    <a href="/orders/{{ order.getId() }}/receipts" target="_blank" class="btn btn-info">
+                                    <a href="/orders/{{ order['order_id'] }}/receipts" target="_blank" class="btn btn-info">
                                         Generate Receipt
                                     </a>
 
-                                    <button order-id='{{ order.getId() }}' class="btn btn-warning details">
+                                    <button order-id='{{ order['order_id'] }}' class="btn btn-warning details">
                                         More Details
                                     </button>
 
@@ -103,15 +109,14 @@
 
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -129,9 +134,8 @@
                     return;
                 }
 
-                console.log(foods.foods)
                 $(".order-table").html("");
-                
+
                 foods.foods.map((fd, idx) => {
                     $(".order-table").append(
                         `<tr>
@@ -145,7 +149,6 @@
 
                 $(".modal.order").modal('show');
 
-                console.log(foods);
             });
         });
     </script>

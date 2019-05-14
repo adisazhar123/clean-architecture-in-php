@@ -26,4 +26,11 @@ class OrderRepository extends AbstractDoctrineRepository implements OrderReposit
         return $builder->getQuery()->getResult();
     }
 
+    public function persist($entity)
+    {
+        $this->entityManager->persist($entity);
+        $this->entityManager->flush();
+        return $entity;
+    }
+
 }
