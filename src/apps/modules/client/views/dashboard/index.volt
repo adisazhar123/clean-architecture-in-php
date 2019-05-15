@@ -13,6 +13,9 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/css/alertify.min.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/css/themes/bootstrap.min.css"/>
+
     <title>Resto Adis</title>
 
 </head>
@@ -57,6 +60,8 @@
                             <p class="card-text">{{ food['description'] }}</p>
                             <h5>Rp.</h5>
                             <h5 class="price">{{ foods.formatToRupiah(food['price']) }}</h5>
+                            <input type="hidden" class="count_price" value="{{ food['price'] }}"  >
+                            <input type="hidden" name="hidden_price" value="{{ food['price'] }}" class="hidden_price" >
                         </div>
                         <div class="card-footer">
                             <button btn-food-id='{{ food['food_id'] }}' class="btn btn-primary purchase">Purchase</button>
@@ -87,6 +92,9 @@
                             <div class="card-body">
                                 <div class="row in-cart">
                                     <p>Empty</p>
+                                </div>
+                                <div class="total">
+                                    <h5 id="total">Total: Rp 0</h5>
                                 </div>
                             </div>
                         </div>
@@ -144,24 +152,34 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/alertify.min.js"></script>
     <script>
+        function convertToRupiah(angka) {
+            var rupiah = '';
+            var angkarev = angka.toString().split('').reverse().join('');
+            for(var i = 0; i < angkarev.length; i++) if(i%3 == 0) rupiah += angkarev.substr(i,3)+'.';
+            return rupiah.split('',rupiah.length-1).reverse().join('') + ',00';
+        }
+
         $(document).ready(function () {
             let foods = [];
+            let total = 0;
 
             $(".purchase").click(function () {
                 let foodId = $(this).attr('btn-food-id');
-                
-
                 let inCart = foods.find(fd => fd.id == foodId);
-                
+                const price = $(".food#" + foodId + " .hidden_price").val();
+                console.log(price);
+                total += parseFloat(price);
+
                 if (inCart) {
-                    inCart.amount = parseInt(inCart.amount) + 1;
+                    inCart.amount = inCart.amount + 1;
                 } else {
 
                     let food = {
                         id: foodId,
                         name: $(".food#" + foodId + " .card-title").text(),
-                        price: $(".food#" + foodId + " .price").text(),
+                        price: $(".food#" + foodId + " .count_price").val(),
                         amount: 1
                     };
 
@@ -184,10 +202,13 @@
                     );
                 });
 
+                $("#total").text("Rp " + convertToRupiah(total));
+
             });
 
             function resetMealOrder() {
                 foods = [];
+                total = 0;
                 const foodCart = $(".in-cart");
                 foodCart.html("Empty");
                 $("input[name='customer_name']").val("");

@@ -6,7 +6,7 @@ namespace RestoOrder\UseCase\AllFoods;
 
 use RestoOrder\Domain\Repository\FoodRepositoryInterface;
 
-class AllFoodsUseCase
+class AllFoodsUseCase implements AllFoodsUseCaseInterface
 {
     protected $foodRepository;
 

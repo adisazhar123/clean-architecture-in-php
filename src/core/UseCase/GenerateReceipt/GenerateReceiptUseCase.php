@@ -5,11 +5,14 @@ namespace RestoOrder\UseCase\GenerateReceipt;
 
 
 use RestoOrder\Domain\Repository\OrderRepositoryInterface;
+use RestoOrder\Helpers\CurrencyTrait;
 use RestoOrder\Response\Document\DocumentGeneratorInterface;
 use RestoOrder\UseCase\FindOrder\FindOrderResponse;
 
-class GenerateReceiptUseCase
+class GenerateReceiptUseCase implements GenerateReceiptUseCaseInterface
 {
+    use CurrencyTrait;
+
     protected $orderRepository;
     protected $pdfGenerator;
 
@@ -58,24 +61,22 @@ class GenerateReceiptUseCase
                 <body>
                 
                 <h3>Billed To:</h3>
-                <h4>ADIS</h4>
+                <h4> ". $html['customer'] ."</h4>
                 
                 <table id=\"customers\">
                   <tr>
-                    <th>Company</th>
-                    <th>Contact</th>
-                    <th>Country</th>
+                    <th>Food</th>
+                    <th>Description</th>
+                    <th>Price</th>
                   </tr>
                   ". $html['foods'] ."
                 </table>
                 
                 <h3>Total: </h3>
-                <h4>845769</h4>
-                
+                <h4>Rp ". $this->formatToRupiah($html['total'])."</h4>
                 </body>
             </html>
             ";
-
         $receipt = $this->pdfGenerator->createDocument($template);
         return new GenerateReceiptResponse($receipt);
 
@@ -84,16 +85,19 @@ class GenerateReceiptUseCase
     public function receiptDataToHtml(FindOrderResponse $receiptData)
     {
         $foods = '';
+        $total = 0;
+        $customer = $receiptData->getOrder()['customer'];
 
         foreach ($receiptData->getFoods() as $food)
         {
             $foods .= "<tr>
                         <td>".$food['name']."</td>
                         <td>".$food['description']."</td>
-                        <td>".$food['price']."</td>
+                        <td>Rp ". $this->formatToRupiah($food['price']) ."</td>
                       </tr>";
+            $total += $food['price'];
         }
 
-        return ['foods' => $foods];
+        return ['foods' => $foods, 'total' => $total, 'customer' => $customer];
     }
 }

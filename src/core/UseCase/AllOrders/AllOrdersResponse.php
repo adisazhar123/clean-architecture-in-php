@@ -4,8 +4,12 @@
 namespace RestoOrder\UseCase\AllOrders;
 
 
+use RestoOrder\Helpers\CurrencyTrait;
+
 class AllOrdersResponse
 {
+    use CurrencyTrait;
+
     protected $orders = [];
 
     public function __construct(array $orders)
@@ -21,6 +25,11 @@ class AllOrdersResponse
                 'price' => $order->getTotal()];
         }
 
+    }
+
+    public function formatOrderId($orderId)
+    {
+        return 'ADISRESTO-' . $orderId;
     }
 
     public function getOrders()

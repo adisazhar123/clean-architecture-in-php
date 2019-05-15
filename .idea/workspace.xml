@@ -1,33 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a202e4e-411e-4807-986d-360330a2fcf5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/UseCase/AddFood/AddFoodRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/clean-arch.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/clean-arch.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/src.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/.idea/src.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/modules/client/Module.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/modules/client/Module.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/modules/client/config/routing.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/modules/client/config/routing.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/modules/client/contracts/IHttpRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/modules/client/contracts/IResource.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/modules/client/contracts/IToken.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/modules/client/controllers/web/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/modules/client/controllers/web/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/modules/client/views/dashboard/generated-receipt.volt" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/modules/client/views/dashboard/generated-receipt.volt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/modules/client/views/dashboard/index.volt" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/modules/client/views/dashboard/index.volt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/modules/client/views/dashboard/orders.volt" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/modules/client/views/dashboard/orders.volt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/src/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Domain/Service/OrderService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Domain/Service/OrderService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Persistence/Doctrine/Mapping/RestoOrder.Domain.Entity.FoodOrder.dcm.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Persistence/Doctrine/Mapping/RestoOrder.Domain.Entity.FoodOrder.dcm.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Persistence/Doctrine/Mapping/RestoOrder.Domain.Entity.Order.dcm.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Persistence/Doctrine/Mapping/RestoOrder.Domain.Entity.Order.dcm.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Persistence/Doctrine/Repository/FoodRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Persistence/Doctrine/Repository/FoodRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Persistence/Doctrine/Repository/OrderRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Persistence/Doctrine/Repository/OrderRepository.php" afterDir="false" />
-    </list>
+    <list default="true" id="5a202e4e-411e-4807-986d-360330a2fcf5" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +16,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/apps/modules/client/views/dashboard/foods.volt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
+            <state relative-caret-position="517">
               <caret line="186" column="16" selection-start-line="186" selection-start-column="16" selection-end-line="186" selection-end-column="16" />
             </state>
           </provider>
@@ -346,16 +320,15 @@
       <updated>1557211989902</updated>
       <workItem from="1557211993382" duration="2917000" />
       <workItem from="1557293836387" duration="677000" />
-      <workItem from="1557842772364" duration="12998000" />
+      <workItem from="1557842772364" duration="13598000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16592000" />
+    <option name="totallyTimeSpent" value="17192000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1919" y="0" width="1922" height="1081" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3361793" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -731,7 +704,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/apps/modules/client/views/dashboard/foods.volt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
+        <state relative-caret-position="517">
           <caret line="186" column="16" selection-start-line="186" selection-start-column="16" selection-end-line="186" selection-end-column="16" />
         </state>
       </provider>

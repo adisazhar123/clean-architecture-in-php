@@ -59,10 +59,10 @@
                         <tbody>
                             {% for order in orders.getOrders() %}
                             <tr>
-                                <th scope="row">1</th>
+                                <th scope="row">{{ orders.formatOrderId(order['order_id']) }}</th>
                                 <td>{{ order['customer'] }}</td>
                                 <td>{{ order['description'] }}</td>
-                                <td>{{ order['price'] }}</td>
+                                <td>Rp {{ orders.formatToRupiah(order['price']) }}</td>
                                 <td>
                                     <a href="/orders/{{ order['order_id'] }}/receipts" target="_blank" class="btn btn-info">
                                         Generate Receipt

@@ -11,7 +11,7 @@ use RestoOrder\Domain\Repository\OrderRepositoryInterface;
 use RestoOrder\Domain\Repository\CustomerRepositoryInterface;
 use RestoOrder\Domain\Repository\FoodOrderRepositoryInterface;
 
-class CreateOrderUseCase 
+class CreateOrderUseCase implements CreateOrderUseCaseInterface
 {
     protected $customerRepository;
     protected $foodRepository;
@@ -30,6 +30,8 @@ class CreateOrderUseCase
     {
         $foods = $request->getFoods();
         $cus = $request->getCustomer();
+
+//        error_log(count($foods), 3, '/home/adisazhar/projects/phalcon/clean-arch/src/core/UseCase/CreateOrder/phalcon.log');
         try {
             $customer = new Customer();
             $customer->setName($cus['name']);
@@ -40,7 +42,9 @@ class CreateOrderUseCase
 
             foreach($foods as $food) {   
                 // calculate total price
-                $food_total = $food['amount'] * $food['price'];
+                $food_total = doubleval($food['amount']) * doubleval($food['price']);
+//                error_log($food['name'] . ': ' . $food['amount'] . " * " . $food['price'] . "\n", 3, '/home/adisazhar/projects/phalcon/clean-arch/src/core/UseCase/CreateOrder/phalcon.log');
+//                error_log(doubleval($food['amount']) * doubleval($food['price']) . "\n", 3, '/home/adisazhar/projects/phalcon/clean-arch/src/core/UseCase/CreateOrder/phalcon.log');
                 $total_price += $food_total;
             }
             

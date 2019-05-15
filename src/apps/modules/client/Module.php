@@ -132,16 +132,12 @@ class Module implements ModuleDefinitionInterface
         });
 
         $di->setShared('orderService', function() {
-            $orderRepository = $this->get('orderRepository');
-            $customerRepository = $this->get('customerRepository');
-            $foodOrderRepository = $this->get('foodOrderRepository');
-            $foodRepository = $this->get('foodRepository');
             $createOrderUc = $this->get('createOrderUseCase');
             $findOrderUc = $this->get('findOrderUseCase');
             $generateReceiptUc = $this->get('generateReceiptUseCase');
             $allOrdersUc = $this->get('allOrdersUseCase');
 
-            return new \RestoOrder\Domain\Service\OrderService($customerRepository, $foodRepository, $orderRepository, $foodOrderRepository, $createOrderUc, $findOrderUc, $generateReceiptUc, $allOrdersUc);
+            return new \RestoOrder\Domain\Service\OrderService($createOrderUc, $findOrderUc, $generateReceiptUc, $allOrdersUc);
         });
 
         $di->set('addFoodUseCase', function() {

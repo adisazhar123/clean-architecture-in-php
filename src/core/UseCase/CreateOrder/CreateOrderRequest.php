@@ -2,7 +2,7 @@
 namespace RestoOrder\UseCase\CreateOrder;
 
 class CreateOrderRequest {
-    protected $foods;
+    protected $foods = [];
     protected $customer;
 
     /**
@@ -29,7 +29,7 @@ class CreateOrderRequest {
      */
     public function setFoods($foods)
     {
-        $this->foods = $foods;
+        $this->foods [] = $foods;
     }
 
     /**

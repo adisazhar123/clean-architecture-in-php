@@ -5,9 +5,12 @@ namespace RestoOrder\UseCase\AllFoods;
 
 
 use RestoOrder\Domain\Entity\Food;
+use RestoOrder\Helpers\CurrencyTrait;
 
 class AllFoodsResponse
 {
+    use CurrencyTrait;
+
     protected $foods = [];
 
     public function __construct(array $foods)
@@ -27,10 +30,6 @@ class AllFoodsResponse
         }
     }
 
-    public function formatToRupiah($price)
-    {
-        return number_format($price,2,',','.');
-    }
 
     /**
      * @return array

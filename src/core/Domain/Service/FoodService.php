@@ -6,15 +6,14 @@ namespace RestoOrder\Domain\Service;
 use RestoOrder\Domain\Repository\FoodRepositoryInterface;
 use RestoOrder\UseCase\AddFood\AddFoodRequest;
 use RestoOrder\UseCase\AddFood\AddFoodResponse;
-use RestoOrder\UseCase\AddFood\AddFoodUseCase;
 use RestoOrder\UseCase\AddFood\AddFoodUseCaseInterface;
 use RestoOrder\UseCase\AllFoods\AllFoodsResponse;
-use RestoOrder\UseCase\AllFoods\AllFoodsUseCase;
+use RestoOrder\UseCase\AllFoods\AllFoodsUseCaseInterface;
 use RestoOrder\UseCase\FindFood\FindFoodResponse;
-use RestoOrder\UseCase\FindFood\FindFoodUseCase;
+use RestoOrder\UseCase\FindFood\FindFoodUseCaseInterface;
 use RestoOrder\UseCase\UpdateFood\UpdateFoodRequest;
 use RestoOrder\UseCase\UpdateFood\UpdateFoodResponse;
-use RestoOrder\UseCase\UpdateFood\UpdateFoodUseCase;
+use RestoOrder\UseCase\UpdateFood\UpdateFoodUseCaseInterface;
 
 
 class FoodService
@@ -26,7 +25,7 @@ class FoodService
     protected $findFoodUc;
     protected $updateFoodUc;
 
-    public function __construct(FoodRepositoryInterface $foodRepository, AllFoodsUseCase $af, AddFoodUseCaseInterface $adf, FindFoodUseCase $ff, UpdateFoodUseCase $uf)
+    public function __construct(FoodRepositoryInterface $foodRepository, AllFoodsUseCaseInterface $af, AddFoodUseCaseInterface $adf, FindFoodUseCaseInterface $ff, UpdateFoodUseCaseInterface $uf)
     {
         $this->foodRepository = $foodRepository;
         $this->allFoodsUc = $af;

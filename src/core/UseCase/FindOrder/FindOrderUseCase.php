@@ -6,7 +6,7 @@ namespace RestoOrder\UseCase\FindOrder;
 
 use RestoOrder\Domain\Repository\OrderRepositoryInterface;
 
-class FindOrderUseCase
+class FindOrderUseCase implements FindOrderUseCaseInterface
 {
     protected $orderRepository;
 

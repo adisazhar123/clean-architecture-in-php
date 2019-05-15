@@ -6,7 +6,7 @@ namespace RestoOrder\UseCase\FindFood;
 
 use RestoOrder\Domain\Repository\FoodRepositoryInterface;
 
-class FindFoodUseCase
+class FindFoodUseCase implements FindFoodUseCaseInterface
 {
     protected $foodRepo;
 
