@@ -13,7 +13,7 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet">
 
-    <title>Hello, world!</title>
+    <title>Resto Adis</title>
 </head>
 
 <body>

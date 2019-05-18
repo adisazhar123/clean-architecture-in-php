@@ -15,4 +15,5 @@ class CustomerRepository extends AbstractDoctrineRepository implements CustomerR
         $this->entityManager->flush();
         return $entity;
     }
+
 }
