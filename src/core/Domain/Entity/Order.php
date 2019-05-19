@@ -13,19 +13,29 @@ class Order extends AbstractEntity
     protected $description;
     protected $total;
     protected $foods;
-    // protected $food
+    protected $coupon;
+
+    /**
+     * @return mixed
+     */
+    public function getCoupon()
+    {
+        return $this->coupon;
+    }
+
+    /**
+     * @param mixed $coupon
+     */
+    public function setCoupon($coupon)
+    {
+        $this->coupon = $coupon;
+    }
 
     public function __construct()
     {
         $this->foods = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
-    public function addFood(Food $food)
-    {
-        $this->foods[] = $food;
-        $food->addOrder($this);
-        return $this;
-    }
 
     public function getFoods()
     {

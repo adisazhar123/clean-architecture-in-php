@@ -10,6 +10,7 @@ class FindOrderResponse
 {
     protected $order = [];
     protected $foods = [];
+    protected $coupon = [];
 
     /**
      * FindOrderResponse constructor.
@@ -22,11 +23,21 @@ class FindOrderResponse
     }
 
     /**
+     * @return array
+     */
+    public function getCoupon(): array
+    {
+        return $this->coupon;
+    }
+
+    /**
      * @param Order $order
      */
     public function map(Order $order)
     {
-        $this->order = ['order_id' => $order->getId(), 'customer' => $order->getCustomer()->getName()];
+        $this->order = ['order_id' => $order->getId(), 'customer' => $order->getCustomer()->getName(), 'total_price' => $order->getTotal()];
+        $coupon = $order->getCoupon();
+        $this->coupon = [$coupon];
         foreach ($order->getFoods() as $orderFood) {
             $this->foods [] = ['name' => $orderFood->getFood()->getName(), 'description' => $orderFood->getFood()->getDescription(),
                 'price' => $orderFood->getFood()->getPrice()];

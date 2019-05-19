@@ -12,9 +12,15 @@ use Doctrine\ORM\EntityManager;
 use Phalcon\Mvc\View\Engine\Volt;
 use Phalcon\Mvc\ModuleDefinitionInterface;
 use RestoOrder\Domain\Repository\CustomerRepositoryInterface;
+use RestoOrder\Domain\Service\CouponService;
+use RestoOrder\UseCase\AddCoupon\AddCouponUseCase;
 use RestoOrder\UseCase\AddFood\AddFoodUseCase;
+use RestoOrder\UseCase\AllCoupons\AllCouponsUseCase;
 use RestoOrder\UseCase\AllFoods\AllFoodsUseCase;
 use RestoOrder\UseCase\AllOrders\AllOrdersUseCase;
+use RestoOrder\UseCase\CanUseDiscount\CanUseDiscountUseCase;
+use RestoOrder\UseCase\CountTotalAfterDiscount\CountTotalAfterDiscountUseCase;
+use RestoOrder\UseCase\FindCoupon\FindCouponUseCase;
 use RestoOrder\UseCase\FindFood\FindFoodUseCase;
 use RestoOrder\UseCase\GenerateReceipt\GenerateReceiptUseCase;
 use RestoOrder\UseCase\UpdateFood\UpdateFoodUseCase;
@@ -106,8 +112,10 @@ class Module implements ModuleDefinitionInterface
             $customerRepository = $this->get('customerRepository');
             $foodOrderRepository = $this->get('foodOrderRepository');
             $foodRepository = $this->get('foodRepository');
-
-            return new \RestoOrder\UseCase\CreateOrder\CreateOrderUseCase($customerRepository, $foodRepository, $orderRepository, $foodOrderRepository);
+            $couponRepo = $this->get('couponRepository');
+            $countTotalUc = new CountTotalAfterDiscountUseCase();
+            $canUseDiscountUc = new CanUseDiscountUseCase();
+            return new \RestoOrder\UseCase\CreateOrder\CreateOrderUseCase($customerRepository, $foodRepository, $orderRepository, $foodOrderRepository, $couponRepo, $countTotalUc, $canUseDiscountUc);
         });
 
         $di->set('findOrderUseCase', function() {
@@ -138,6 +146,33 @@ class Module implements ModuleDefinitionInterface
             $allOrdersUc = $this->get('allOrdersUseCase');
 
             return new \RestoOrder\Domain\Service\OrderService($createOrderUc, $findOrderUc, $generateReceiptUc, $allOrdersUc);
+        });
+
+        $di->setShared('couponRepository', function() {
+            $entityManager = $this->get('entityManager');
+            return new \RestoOrder\Persistence\Doctrine\Repository\CouponRepository($entityManager);
+        });
+
+        $di->set('allCouponsUseCase', function() {
+           $couponRepo = $this->get('couponRepository');
+           return new AllCouponsUseCase($couponRepo);
+        });
+
+        $di->set('addCouponUseCase', function() {
+            $couponRepo = $this->get('couponRepository');
+            return new AddCouponUseCase($couponRepo);
+        });
+
+        $di->set('findCouponUseCase', function() {
+            $couponRepo = $this->get('couponRepository');
+            return new FindCouponUseCase($couponRepo);
+        });
+
+        $di->set('couponService', function() {
+           $findCouponUc = $this->get('findCouponUseCase');
+           $addCouponUc = $this->get('addCouponUseCase');
+           $allCouponsUc = $this->get('allCouponsUseCase');
+           return new CouponService($addCouponUc, $allCouponsUc, $findCouponUc);
         });
 
         $di->set('addFoodUseCase', function() {
@@ -171,7 +206,7 @@ class Module implements ModuleDefinitionInterface
 
         $di->setShared('serializer', function() {
             $jmsSerializer = $this->get('jmsSerializer');
-            return new \RestoOrder\Response\Serializer\JmsSerializer($jmsSerializer);
+            return new \RestoOrder\Presenter\Serializer\JmsSerializer($jmsSerializer);
         });
 
         $di->setShared('domPdf', function() {
@@ -185,10 +220,9 @@ class Module implements ModuleDefinitionInterface
         $di->setShared('pdfGenerator', function() {
             $dompdf = $this->get('domPdf');
 
-            return new \RestoOrder\Response\Document\DomPdfDocumentGenerator($dompdf);
+            return new \RestoOrder\Presenter\Document\DomPdfDocumentGenerator($dompdf);
         });
         
 
     }
 }
-?>

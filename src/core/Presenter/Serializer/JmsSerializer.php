@@ -1,5 +1,5 @@
 <?php
-namespace RestoOrder\Response\Serializer;
+namespace RestoOrder\Presenter\Serializer;
 
 class JmsSerializer implements SerializerInterface 
 {

@@ -1,47 +1,5 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet">
-
-    <title>Resto Adis</title>
-</head>
-
-<body>
-
-
-<nav class="navbar navbar-expand-lg navbar-dark primary-color-dark mb-3">
-        <div class="container">
-            <a class="navbar-brand" href="#">Adis Resto</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/foods">Foods </a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/orders">Orders</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+{% extends 'layouts/layout.volt' %}
+{% block content %}
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -94,11 +52,12 @@
             <div class="modal-body">
                     <table class="table table-striped table-hover">
                     <tbody class="order-table">
-                        
-
 
                     </tbody>
                 </table>
+                <div class="coupon">
+
+                </div>
             </div>
             <div class="modal-footer">                
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -107,8 +66,9 @@
         </div>
         </div>
 
+{% endblock %}
 
-
+{% block script %}
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
@@ -135,6 +95,7 @@
                 }
 
                 $(".order-table").html("");
+                $(".coupon").html("");
 
                 foods.foods.map((fd, idx) => {
                     $(".order-table").append(
@@ -147,12 +108,15 @@
                     );                    
                 });
 
+                foods.coupon.map((cp, idx) => {
+                    $(".coupon").html(
+                      `<p>Coupon Name: ${cp.name}</p><p>Code: ${cp.code}</p>`
+                    );
+                });
+
                 $(".modal.order").modal('show');
 
             });
         });
     </script>
-
-</body>
-
-</html>
+{% endblock %}

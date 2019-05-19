@@ -21,9 +21,9 @@ $router->addGet('/orders', [
 ]);
 
 $router->addPost('/orders', [
-    'namespace' => 'App\Client\Controllers\Web',
+    'namespace' => 'App\Client\Controllers\Api',
     'module' => 'client',
-    'controller' => 'dashboard',
+    'controller' => 'orders',
     'action' => 'createOrder'
 ]);
 
@@ -35,9 +35,9 @@ $router->addGet('/orders/{order_id}/receipts', [
 ]);
 
 $router->addGet('/orders/{order_id}', [
-    'namespace' => 'App\Client\Controllers\Web',
+    'namespace' => 'App\Client\Controllers\Api',
     'module' => 'client',
-    'controller' => 'dashboard',
+    'controller' => 'orders',
     'action' => 'findOrder'
 ]);
 
@@ -49,26 +49,40 @@ $router->addGet('/foods', [
 ]);
 
 $router->addPost('/foods', [
-    'namespace' => 'App\Client\Controllers\Web',
+    'namespace' => 'App\Client\Controllers\Api',
     'module' => 'client',
-    'controller' => 'dashboard',
+    'controller' => 'orders',
     'action' => 'addFood'
 ]);
 
 $router->addGet('/foods/{foodId}', [
-    'namespace' => 'App\Client\Controllers\Web',
+    'namespace' => 'App\Client\Controllers\Api',
     'module' => 'client',
-    'controller' => 'dashboard',
+    'controller' => 'orders',
     'action' => 'findFood'
 ]);
 
 $router->add('/foods/{foodId}', [
-    'namespace' => 'App\Client\Controllers\Web',
+    'namespace' => 'App\Client\Controllers\Api',
     'module' => 'client',
-    'controller' => 'dashboard',
+    'controller' => 'orders',
     'action' => 'updateFood'
 ])->via([
     'PUT'
+]);
+
+$router->addGet('/coupons', [
+    'namespace' => 'App\Client\Controllers\Web',
+    'module' => 'client',
+    'controller' => 'dashboard',
+    'action' => 'coupons'
+]);
+
+$router->addPost('/coupons', [
+    'namespace' => 'App\Client\Controllers\Web',
+    'module' => 'client',
+    'controller' => 'coupons',
+    'action' => 'addCoupon'
 ]);
 
 return $router;

@@ -17,7 +17,7 @@ class AllFoodsUseCase implements AllFoodsUseCaseInterface
 
     public function allFoods() : AllFoodsResponse
     {
-        $foods = $this->foodRepository->getAll();
+        $foods = $this->foodRepository->allFoods();
         $foodResponse = new AllFoodsResponse($foods);
         return $foodResponse;
     }

@@ -17,7 +17,7 @@ class AllOrdersUseCase implements AllOrdersUseCaseInterface
 
     public function allOrders(): AllOrdersResponse
     {
-        $orders = $this->orderRepository->getAll();
+        $orders = $this->orderRepository->allOrders();
         $ordersResponse = new AllOrdersResponse($orders);
         return $ordersResponse;
     }

@@ -13,11 +13,13 @@ class DashboardController extends Controller
     protected $orderService;
     protected $foodService;
     protected $serializer;
+    protected $couponService;
 
     public function initialize()
     {
         $this->orderService = $this->di->get('orderService');
         $this->foodService = $this->di->get('foodService');
+        $this->couponService = $this->di->get('couponService');
         $this->serializer = $this->di->get('serializer');
     }
     
@@ -28,16 +30,6 @@ class DashboardController extends Controller
         $this->view->foods = $foods;
 
         return $this->view->pick('dashboard/index');
-    }
-
-    public function createOrderAction()
-    {
-        $createdOrderResponse = $this->orderService->createOrder($_POST);
-        $createdOrderResponseJson = $this->serializer->toJson($createdOrderResponse);
-        $this->response->setStatusCode(201, $createdOrderResponse->getHttpMessage());
-        $this->response->setContent($createdOrderResponseJson);
-        $this->response->send();
-
     }
 
     public function ordersAction()
@@ -58,15 +50,6 @@ class DashboardController extends Controller
         return $this->view->pick('dashboard/generated-receipt');
     }
 
-    public function findOrderAction($order_id)
-    {
-        $order = $this->orderService->findOrder($order_id);
-        $orderJson = $this->serializer->toJson($order);
-     
-        $this->response->setContent($orderJson);
-        $this->response->send();
-    }
-
     public function foodsAction()
     {
         $foods = $this->foodService->getAvailableFoods();
@@ -74,33 +57,14 @@ class DashboardController extends Controller
         $this->view->pick('dashboard/foods');
     }
 
-    public function addFoodAction()
+    public function couponsAction()
     {
-        $food = $this->foodService->addFood($_POST);
-        $foodJson = $this->serializer->toJson($food);
-
-        $this->response->setContent($foodJson);
-        $this->response->send();
+        $coupons = $this->couponService->allCoupons();
+        $this->view->coupons = $coupons;
+        $this->view->pick('dashboard/coupons');
     }
 
-    public function findFoodAction($foodId)
-    {
-        $food = $this->foodService->findFood($foodId);
-        $foodJson = $this->serializer->toJson($food);
 
-        $this->response->setContent($foodJson);
-        $this->response->send();
-    }
-
-    public function updateFoodAction($foodId)
-    {
-        $food = $this->foodService->updateFood($foodId, ['name' => $this->request->getPut('name'), 'description' => $this->request->getPut('description'),
-            'price' => $this->request->getPut('price')]);
-        $foodJson = $this->serializer->toJson($food);
-
-        $this->response->setContent($foodJson);
-        $this->response->send();
-    }
 
 }
 

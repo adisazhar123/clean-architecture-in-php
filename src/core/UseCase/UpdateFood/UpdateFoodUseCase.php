@@ -17,11 +17,11 @@ class UpdateFoodUseCase implements UpdateFoodUseCaseInterface
 
     public function updateFood($foodId, UpdateFoodRequest $request): UpdateFoodResponse
     {
-        $food = $this->foodRepo->getById($foodId);
+        $food = $this->foodRepo->findFood($foodId);
         $food->setName($request->getName());
         $food->setDescription($request->getDescription());
         $food->setPrice($request->getPrice());
-        $updatedFood = $this->foodRepo->persist($food);
+        $updatedFood = $this->foodRepo->addFood($food);
         return new UpdateFoodResponse($updatedFood);
     }
 }

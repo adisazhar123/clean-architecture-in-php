@@ -33,7 +33,7 @@ class OrderService
 
     public function createOrder($postData): CreateOrderResponse
     {
-        $createdOrderRequest = new CreateOrderRequest($postData['foods'], $postData['customer']);
+        $createdOrderRequest = new CreateOrderRequest($postData['foods'], $postData['customer'], trim($postData['coupon']));
         $createdOrder = $this->createOrderUc->createOrder($createdOrderRequest);
         return $createdOrder;
     }

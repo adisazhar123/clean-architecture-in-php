@@ -4,7 +4,9 @@
 namespace RestoOrder\Domain\Repository;
 
 
-interface OrderRepositoryInterface extends RepositoryInterface
+interface OrderRepositoryInterface
 {
-
+    public function allOrders();
+    public function addOrder($order);
+    public function findOrder($id);
 }

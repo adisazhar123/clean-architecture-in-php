@@ -4,7 +4,7 @@
 namespace RestoOrder\Domain\Repository;
 
 
-interface FoodOrderRepositoryInterface extends RepositoryInterface
+interface FoodOrderRepositoryInterface
 {
-
+    public function addFoodOrder($foodOrder);
 }

@@ -8,7 +8,7 @@ use http\Exception\RuntimeException;
 use RestoOrder\Domain\Entity\AbstractEntity;
 use RestoOrder\Domain\Repository\RepositoryInterface;
 
-abstract class AbstractDoctrineRepository implements RepositoryInterface
+abstract class AbstractDoctrineRepository
 {
     protected $entityManager;
     protected $entityClass;
@@ -41,13 +41,14 @@ abstract class AbstractDoctrineRepository implements RepositoryInterface
     {
         $repository = $this->entityManager->getRepository($this->entityClass);
         $results = $repository->findBy($conditions, $order, $limit, $offset);
+        return $results;
     }
 
     public function persist($entity)
     {
         $this->entityManager->persist($entity);
         $this->entityManager->flush();
-        return $this;
+        return $entity;
     }
 
     public function begin()

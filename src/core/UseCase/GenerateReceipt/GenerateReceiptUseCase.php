@@ -6,7 +6,7 @@ namespace RestoOrder\UseCase\GenerateReceipt;
 
 use RestoOrder\Domain\Repository\OrderRepositoryInterface;
 use RestoOrder\Helpers\CurrencyTrait;
-use RestoOrder\Response\Document\DocumentGeneratorInterface;
+use RestoOrder\Presenter\Document\DocumentGeneratorInterface;
 use RestoOrder\UseCase\FindOrder\FindOrderResponse;
 
 class GenerateReceiptUseCase implements GenerateReceiptUseCaseInterface
@@ -24,7 +24,7 @@ class GenerateReceiptUseCase implements GenerateReceiptUseCaseInterface
 
     public function generateReceipt($id) : GenerateReceiptResponse
     {
-        $order = $this->orderRepository->getById($id);
+        $order = $this->orderRepository->findOrder($id);
         $receiptData = new FindOrderResponse($order);
 
        $html = $this->receiptDataToHtml($receiptData);
@@ -74,6 +74,9 @@ class GenerateReceiptUseCase implements GenerateReceiptUseCaseInterface
                 
                 <h3>Total: </h3>
                 <h4>Rp ". $this->formatToRupiah($html['total'])."</h4>
+                <h3>Discounted Total: </h3>
+                <h4>Rp ". $this->formatToRupiah($html['discounted'])."</h4>
+                ". $html['coupon'] ."
                 </body>
             </html>
             ";
@@ -85,6 +88,7 @@ class GenerateReceiptUseCase implements GenerateReceiptUseCaseInterface
     public function receiptDataToHtml(FindOrderResponse $receiptData)
     {
         $foods = '';
+        $coupon = '';
         $total = 0;
         $customer = $receiptData->getOrder()['customer'];
 
@@ -97,7 +101,12 @@ class GenerateReceiptUseCase implements GenerateReceiptUseCaseInterface
                       </tr>";
             $total += $food['price'];
         }
+        $coupon = $receiptData->getCoupon()[0];
+        $couponHtml = '';
+        if( $coupon)// $coupon .= "<p>Coupon name: ". $receiptData->getCoupon()[0]->getName() ."</p><p>Code: ". $receiptData->getCoupon()[0]->getCode() ."</p>";
+            $couponHtml = "<p>Coupon: ". $receiptData->getCoupon()[0]->getName() ."</p><p>Code: ". $receiptData->getCoupon()[0]->getCode() ."</p>";
+//        error_log($receiptData->getCoupon()[0]->getName() . "\n", 3, '/home/adisazhar/Desktop/phalcon.log');
 
-        return ['foods' => $foods, 'total' => $total, 'customer' => $customer];
+        return ['foods' => $foods, 'total' => $total, 'customer' => $customer, 'discounted' => $receiptData->getOrder()['total_price'], 'coupon' => $couponHtml];
     }
 }

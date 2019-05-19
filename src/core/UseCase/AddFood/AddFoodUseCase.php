@@ -22,7 +22,7 @@ class AddFoodUseCase implements AddFoodUseCaseInterface
         $food->setDescription($request->getDescription());
         $food->setPrice($request->getPrice());
 
-        $addedFood = $this->foodRepository->persist($food);
+        $addedFood = $this->foodRepository->addFood($food);
         return new AddFoodResponse($addedFood->getName(), $addedFood->getDescription(), $addedFood->getPrice());
 
     }

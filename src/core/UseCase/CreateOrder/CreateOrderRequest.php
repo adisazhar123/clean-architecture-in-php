@@ -3,6 +3,7 @@ namespace RestoOrder\UseCase\CreateOrder;
 
 class CreateOrderRequest {
     protected $foods = [];
+    protected $coupon;
     protected $customer;
 
     /**
@@ -10,10 +11,27 @@ class CreateOrderRequest {
      * @param $foods
      * @param $customer
      */
-    public function __construct($foods, $customer)
+    public function __construct($foods, $customer, $coupon)
     {
         $this->foods = $foods;
         $this->customer = $customer;
+        $this->coupon = $coupon;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCoupon()
+    {
+        return $this->coupon;
+    }
+
+    /**
+     * @param mixed $coupon
+     */
+    public function setCoupon($coupon)
+    {
+        $this->coupon = $coupon;
     }
 
     /**

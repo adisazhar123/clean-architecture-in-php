@@ -26,6 +26,9 @@ RestoOrder\Domain\Entity\Order:
     foods:
       targetEntity: RestoOrder\Domain\Entity\FoodOrder
       mappedBy: order
-
-
-
+  oneToOne:
+    coupon:
+      targetEntity: RestoOrder\Domain\Entity\Coupon
+      joinColumn:
+        name: coupon_id
+        referencedColumnName: id

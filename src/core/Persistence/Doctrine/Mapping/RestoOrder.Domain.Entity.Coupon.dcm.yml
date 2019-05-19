@@ -1,0 +1,35 @@
+RestoOrder\Domain\Entity\Coupon:
+  type: entity
+  table: "coupon"
+  id:
+    id:
+      type: bigint
+      generator:
+        strategy: IDENTITY
+  fields:
+    name:
+      type: string
+      column: name
+    description:
+      type: text
+      column: description
+    minDate:
+      type: datetime
+      column: min_date
+    maxDate:
+      type: datetime
+      column: max_date
+    active:
+      type: integer
+      column: active
+    discountAmount:
+      type: decimal
+      column: discount_amount
+    minSpending:
+      type: decimal
+      precision: 10
+      scale: 2
+      column: min_spending
+    code:
+      type: string
+      column: code

@@ -4,16 +4,28 @@
 namespace RestoOrder\Persistence\Doctrine\Repository;
 
 
+use RestoOrder\Domain\Entity\Food;
 use RestoOrder\Domain\Repository\FoodRepositoryInterface;
 
 class FoodRepository extends AbstractDoctrineRepository implements FoodRepositoryInterface
 {
     protected $entityClass = 'RestoOrder\Domain\Entity\Food';
 
-    public function persist($entity)
+    public function addFood($food)
     {
-        $this->entityManager->persist($entity);
-        $this->entityManager->flush();
-        return $entity;
+        $food = $this->persist($food);
+        return $food;
+    }
+
+    public function allFoods()
+    {
+        $foods = $this->getAll();
+        return $foods;
+    }
+
+    public function findFood($id)
+    {
+        $food = $this->getById($id);
+        return $food;
     }
 }

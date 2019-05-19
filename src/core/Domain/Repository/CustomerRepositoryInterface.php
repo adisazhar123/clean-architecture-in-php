@@ -4,7 +4,7 @@
 namespace RestoOrder\Domain\Repository;
 
 
-interface CustomerRepositoryInterface extends RepositoryInterface
+interface CustomerRepositoryInterface
 {
-    
+    public function addCustomer($customer);
 }

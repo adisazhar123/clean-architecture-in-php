@@ -9,16 +9,10 @@ class Food extends AbstractEntity
     protected $name;
     protected $description;
     protected $price;
-    protected $orders;
 
     public function __construct()
     {
         $this->orders = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    public function addOrder($order) {
-        $this->orders[] = $order;
-        return $this;
     }
 
     /**

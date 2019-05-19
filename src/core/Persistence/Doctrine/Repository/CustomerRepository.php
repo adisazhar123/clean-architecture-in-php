@@ -9,11 +9,10 @@ class CustomerRepository extends AbstractDoctrineRepository implements CustomerR
 {
     protected $entityClass = 'RestoOrder\Domain\Entity\Customer';
 
-    public function persist($entity)
+    public function addCustomer($customer)
     {
-        $this->entityManager->persist($entity);
-        $this->entityManager->flush();
-        return $entity;
+        $customer = $this->persist($customer);
+        return $customer;
     }
 
 }

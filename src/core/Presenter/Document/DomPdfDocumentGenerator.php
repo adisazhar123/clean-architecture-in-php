@@ -1,5 +1,5 @@
 <?php
-namespace RestoOrder\Response\Document;
+namespace RestoOrder\Presenter\Document;
 
 class DomPdfDocumentGenerator implements DocumentGeneratorInterface
 {

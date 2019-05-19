@@ -10,13 +10,21 @@ class OrderRepository extends AbstractDoctrineRepository implements OrderReposit
 {
     protected $entityClass = 'RestoOrder\Domain\Entity\Order';
 
-
-
-    public function persist($entity)
+    public function allOrders()
     {
-        $this->entityManager->persist($entity);
-        $this->entityManager->flush();
-        return $entity;
+        $orders = $this->getAll();
+        return $orders;
     }
 
+    public function addOrder($order)
+    {
+        $order = $this->persist($order);
+        return $order;
+    }
+
+    public function findOrder($id)
+    {
+        $order = $this->getById($id);
+        return $order;
+    }
 }

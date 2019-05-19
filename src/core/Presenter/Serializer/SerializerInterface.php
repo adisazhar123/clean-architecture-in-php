@@ -1,5 +1,5 @@
 <?php
-namespace RestoOrder\Response\Serializer;
+namespace RestoOrder\Presenter\Serializer;
 
 interface SerializerInterface {
     public function toJson($entity);

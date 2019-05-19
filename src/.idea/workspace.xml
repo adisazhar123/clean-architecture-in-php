@@ -3,12 +3,43 @@
   <component name="ChangeListManager">
     <list default="true" id="8f75ce20-9023-4867-84b5-f1d3b4ada424" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/modules/client/Module.php" beforeDir="false" afterPath="$PROJECT_DIR$/apps/modules/client/Module.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/modules/client/config/routing.php" beforeDir="false" afterPath="$PROJECT_DIR$/apps/modules/client/config/routing.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/modules/client/controllers/web/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/apps/modules/client/controllers/web/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/modules/client/views/dashboard/foods.volt" beforeDir="false" afterPath="$PROJECT_DIR$/apps/modules/client/views/dashboard/foods.volt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/modules/client/views/dashboard/index.volt" beforeDir="false" afterPath="$PROJECT_DIR$/apps/modules/client/views/dashboard/index.volt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/modules/client/views/dashboard/orders.volt" beforeDir="false" afterPath="$PROJECT_DIR$/apps/modules/client/views/dashboard/orders.volt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Domain/Entity/Food.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Domain/Entity/Food.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Domain/Entity/Invoice.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Domain/Entity/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Domain/Entity/Order.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/Domain/Repository/CustomerRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Domain/Repository/CustomerRepositoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Domain/Repository/FoodOrderRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Domain/Repository/FoodOrderRepositoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Domain/Repository/FoodRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Domain/Repository/FoodRepositoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Domain/Repository/InvoiceRepositoryInterface.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/core/Domain/Repository/OrderRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Domain/Repository/OrderRepositoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Domain/Service/OrderService.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Domain/Service/OrderService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Persistence/Doctrine/Mapping/RestoOrder.Domain.Entity.Invoice.dcm.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Persistence/Doctrine/Mapping/RestoOrder.Domain.Entity.Order.dcm.yml" beforeDir="false" afterPath="$PROJECT_DIR$/core/Persistence/Doctrine/Mapping/RestoOrder.Domain.Entity.Order.dcm.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Persistence/Doctrine/Repository/AbstractDoctrineRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Persistence/Doctrine/Repository/AbstractDoctrineRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/Persistence/Doctrine/Repository/CustomerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Persistence/Doctrine/Repository/CustomerRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Persistence/Doctrine/Repository/FoodOrderRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Persistence/Doctrine/Repository/FoodOrderRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Persistence/Doctrine/Repository/FoodRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Persistence/Doctrine/Repository/FoodRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Persistence/Doctrine/Repository/InvoiceRepository.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/core/Persistence/Doctrine/Repository/OrderRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Persistence/Doctrine/Repository/OrderRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Response/Document/DocumentGeneratorInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Presenter/Document/DocumentGeneratorInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Response/Document/DomPdfDocumentGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Presenter/Document/DomPdfDocumentGenerator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Response/Serializer/JmsSerializer.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Presenter/Serializer/JmsSerializer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Response/Serializer/SerializerInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Presenter/Serializer/SerializerInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/UseCase/AddFood/AddFoodUseCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/UseCase/AddFood/AddFoodUseCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/UseCase/AllFoods/AllFoodsUseCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/UseCase/AllFoods/AllFoodsUseCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/UseCase/AllOrders/AllOrdersUseCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/UseCase/AllOrders/AllOrdersUseCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/UseCase/CreateOrder/CreateOrderRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/UseCase/CreateOrder/CreateOrderRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/UseCase/CreateOrder/CreateOrderUseCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/UseCase/CreateOrder/CreateOrderUseCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/UseCase/FindFood/FindFoodUseCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/UseCase/FindFood/FindFoodUseCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/UseCase/FindOrder/FindOrderResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/UseCase/FindOrder/FindOrderResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/UseCase/FindOrder/FindOrderUseCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/UseCase/FindOrder/FindOrderUseCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/UseCase/GenerateReceipt/GenerateReceiptUseCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/UseCase/GenerateReceipt/GenerateReceiptUseCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/UseCase/UpdateFood/UpdateFoodUseCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/UseCase/UpdateFood/UpdateFoodUseCase.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,28 +49,12 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/Persistence/Doctrine/Repository/AbstractDoctrineRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="55" column="21" lean-forward="true" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/apps/modules/client/controllers/web/DashboardController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -55,7 +70,28 @@
       <find>formatru</find>
       <find>rupiah</find>
       <find>format</find>
+      <find>addOrder</find>
+      <find>Response</find>
+      <find>RestoOrder\Response</find>
+      <find>findorder</find>
+      <find>addfood</find>
+      <find>minSpe</find>
+      <find>minspe</find>
+      <find>minspending</find>
+      <find>alert</find>
+      <find>food</find>
+      <find>addorder</find>
+      <find>setorder</find>
+      <find>RP</find>
+      <find>flash</find>
+      <find>coup</find>
+      <find>createorder</find>
+      <find>$this-&gt;</find>
+      <find>invoice</find>
     </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/core/Persistence/Doctrine/Mapping</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -63,51 +99,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/core/Domain/Repository/FoodRepositoryInterface.php" />
-        <option value="$PROJECT_DIR$/core/Domain/Entity/Invoice.php" />
-        <option value="$PROJECT_DIR$/core/Domain/Entity/Order.php" />
-        <option value="$PROJECT_DIR$/core/Persistence/Doctrine/Mapping/RestoOrder.Domain.Entity.Invoice.dcm.yml" />
-        <option value="$PROJECT_DIR$/core/Persistence/Doctrine/Mapping/RestoOrder.Domain.Entity.Food.dcm.yml" />
-        <option value="$PROJECT_DIR$/core/Persistence/Doctrine/Repository/AbstractDoctrineRepository.php" />
-        <option value="$PROJECT_DIR$/core/Persistence/Doctrine/Mapping/RestoOrder.Domain.Entity.Order.dcm.yml" />
-        <option value="$PROJECT_DIR$/cli-config.php" />
-        <option value="$PROJECT_DIR$/clear_doctrine_cache.php" />
-        <option value="$PROJECT_DIR$/core/Persistence/Doctrine/Mapping/RestoOrder.Domain.Entity.Customer.dcm.yml" />
-        <option value="$PROJECT_DIR$/core/Domain/Entity/Customer.php" />
-        <option value="$PROJECT_DIR$/core/Domain/Entity/Food.php" />
-        <option value="$PROJECT_DIR$/core/Persistence/Doctrine/Repository/FoodRepository.php" />
-        <option value="$PROJECT_DIR$/core/UseCase/GenerateReceipt/GenerateReceiptUsecase.php" />
-        <option value="$PROJECT_DIR$/core/UseCase/GenerateReceipt/GenerateReceiptResponse.php" />
-        <option value="$PROJECT_DIR$/core/Response/Document/DomPdfDocumentGenerator.php" />
-        <option value="$PROJECT_DIR$/core/UseCase/FindOrder/FindOrderResponse.php" />
-        <option value="$PROJECT_DIR$/core/UseCase/AddFood/AddFoodUseCaseInterface.php" />
+        <option value="$PROJECT_DIR$/core/UseCase/AddFood/AddFoodUseCase.php" />
         <option value="$PROJECT_DIR$/core/UseCase/AllFoods/AllFoodsUseCase.php" />
-        <option value="$PROJECT_DIR$/core/UseCase/AllFoods/AllFoodsUseCaseInterface.php" />
-        <option value="$PROJECT_DIR$/core/UseCase/AllOrders/AllOrdersUsecaseInterface.php" />
-        <option value="$PROJECT_DIR$/core/UseCase/AllOrders/AllOrdersUseCaseInterface.php" />
         <option value="$PROJECT_DIR$/core/UseCase/AllOrders/AllOrdersUseCase.php" />
-        <option value="$PROJECT_DIR$/core/UseCase/FindFood/FindFoodUseCase.php" />
-        <option value="$PROJECT_DIR$/core/UseCase/FindOrder/FindOrderUseCase.php" />
-        <option value="$PROJECT_DIR$/core/UseCase/GenerateReceipt/GenerateReceiptUseCaseInterface.php" />
-        <option value="$PROJECT_DIR$/core/UseCase/UpdateFood/UpdateFoodUseCase.php" />
-        <option value="$PROJECT_DIR$/core/Domain/Service/FoodService.php" />
-        <option value="$PROJECT_DIR$/core/Domain/Service/OrderService.php" />
-        <option value="$PROJECT_DIR$/apps/modules/client/Module.php" />
-        <option value="$PROJECT_DIR$/core/UseCase/CreateOrder/CreateOrderRequest.php" />
-        <option value="$PROJECT_DIR$/core/UseCase/CreateOrder/phalcon.log" />
-        <option value="$PROJECT_DIR$/apps/modules/client/views/dashboard/index.volt" />
-        <option value="$PROJECT_DIR$/core/Helpers/CurrencyTrait.php" />
-        <option value="$PROJECT_DIR$/core/UseCase/AllFoods/AllFoodsResponse.php" />
-        <option value="$PROJECT_DIR$/core/UseCase/AllOrders/AllOrdersResponse.php" />
-        <option value="$PROJECT_DIR$/core/UseCase/CreateOrder/CreateOrderUseCase.php" />
-        <option value="$PROJECT_DIR$/core/UseCase/GenerateReceipt/GenerateReceiptUseCase.php" />
-        <option value="$PROJECT_DIR$/apps/modules/client/views/dashboard/orders.volt" />
-        <option value="$PROJECT_DIR$/core/Persistence/Doctrine/Repository/OrderRepository.php" />
-        <option value="$PROJECT_DIR$/core/Domain/Repository/OrderRepositoryInterface.php" />
-        <option value="$PROJECT_DIR$/core/Persistence/Doctrine/Repository/CustomerRepository.php" />
         <option value="$PROJECT_DIR$/core/Domain/Repository/CustomerRepositoryInterface.php" />
+        <option value="$PROJECT_DIR$/core/Persistence/Doctrine/Repository/CustomerRepository.php" />
+        <option value="$PROJECT_DIR$/core/Domain/Repository/FoodRepositoryInterface.php" />
+        <option value="$PROJECT_DIR$/core/Persistence/Doctrine/Repository/FoodRepository.php" />
+        <option value="$PROJECT_DIR$/core/Domain/Repository/FoodOrderRepositoryInterface.php" />
+        <option value="$PROJECT_DIR$/core/UseCase/FindFood/FindFoodUseCase.php" />
+        <option value="$PROJECT_DIR$/core/Domain/Repository/OrderRepositoryInterface.php" />
+        <option value="$PROJECT_DIR$/core/Persistence/Doctrine/Repository/OrderRepository.php" />
+        <option value="$PROJECT_DIR$/core/UseCase/FindOrder/FindOrderUseCase.php" />
+        <option value="$PROJECT_DIR$/core/UseCase/UpdateFood/UpdateFoodUseCase.php" />
+        <option value="$PROJECT_DIR$/core/Persistence/Doctrine/Repository/FoodOrderRepository.php" />
+        <option value="$PROJECT_DIR$/core/Domain/Entity/Food.php" />
+        <option value="$PROJECT_DIR$/core/Presenter/Serializer/JmsSerializer.php" />
+        <option value="$PROJECT_DIR$/core/Presenter/Document/DocumentGeneratorInterface.php" />
+        <option value="$PROJECT_DIR$/core/Presenter/Serializer/SerializerInterface.php" />
+        <option value="$PROJECT_DIR$/core/Presenter/Document/DomPdfDocumentGenerator.php" />
+        <option value="$PROJECT_DIR$/core/Domain/Entity/Order.php" />
+        <option value="$PROJECT_DIR$/core/UseCase/FindCoupon/FindCouponUseCase.php" />
+        <option value="$PROJECT_DIR$/apps/modules/client/views/layouts/layout.volt" />
+        <option value="$PROJECT_DIR$/apps/modules/client/views/dashboard/foods.volt" />
         <option value="$PROJECT_DIR$/apps/modules/client/controllers/web/DashboardController.php" />
+        <option value="$PROJECT_DIR$/apps/modules/client/config/routing.php" />
+        <option value="$PROJECT_DIR$/core/UseCase/AddCoupon/AddCouponRequest.php" />
+        <option value="$PROJECT_DIR$/core/Domain/Entity/Coupon.php" />
+        <option value="$PROJECT_DIR$/core/Persistence/Doctrine/Mapping/RestoOrder.Domain.Entity.Coupon.dcm.yml" />
+        <option value="$PROJECT_DIR$/core/Persistence/Doctrine/Repository/AbstractDoctrineRepository.php" />
+        <option value="$PROJECT_DIR$/core/UseCase/AddCoupon/AddCouponResponse.php" />
+        <option value="$PROJECT_DIR$/apps/modules/client/controllers/web/CouponsController.php" />
+        <option value="$PROJECT_DIR$/core/UseCase/AllCoupons/AllCouponsUseCase.php" />
+        <option value="$PROJECT_DIR$/core/Domain/Service/CouponService.php" />
+        <option value="$PROJECT_DIR$/core/UseCase/CreateOrder/CreateOrderRequest.php" />
+        <option value="$PROJECT_DIR$/core/Domain/Service/OrderService.php" />
+        <option value="$PROJECT_DIR$/core/UseCase/AddCoupon/AddCouponUseCase.php" />
+        <option value="$PROJECT_DIR$/apps/modules/client/Module.php" />
+        <option value="$PROJECT_DIR$/apps/modules/client/controllers/api/OrdersController.php" />
+        <option value="$PROJECT_DIR$/core/UseCase/CountTotalAfterDiscount/CountTotalAfterDiscountUseCase.php" />
+        <option value="$PROJECT_DIR$/core/Domain/Repository/CouponRepositoryInterface.php" />
+        <option value="$PROJECT_DIR$/apps/modules/client/views/dashboard/index.volt" />
+        <option value="$PROJECT_DIR$/core/Persistence/Doctrine/Mapping/RestoOrder.Domain.Entity.Order.dcm.yml" />
+        <option value="$PROJECT_DIR$/core/UseCase/CanUseDiscount/CanUseDiscountUseCase.php" />
+        <option value="$PROJECT_DIR$/core/UseCase/AllOrders/AllOrdersResponse.php" />
+        <option value="$PROJECT_DIR$/core/UseCase/AllCoupons/AllCouponsResponse.php" />
+        <option value="$PROJECT_DIR$/apps/modules/client/views/dashboard/coupons.volt" />
+        <option value="$PROJECT_DIR$/core/Persistence/Doctrine/Repository/CouponRepository.php" />
+        <option value="$PROJECT_DIR$/apps/modules/client/views/dashboard/orders.volt" />
+        <option value="$PROJECT_DIR$/core/UseCase/FindOrder/FindOrderResponse.php" />
+        <option value="$PROJECT_DIR$/core/UseCase/GenerateReceipt/GenerateReceiptUseCase.php" />
+        <option value="$PROJECT_DIR$/core/UseCase/CreateOrder/CreateOrderUseCase.php" />
       </list>
     </option>
   </component>
@@ -182,8 +224,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="240" />
-    <option name="y" value="131" />
+    <option name="x" value="2196" />
+    <option name="y" value="219" />
     <option name="width" value="1440" />
     <option name="height" value="789" />
   </component>
@@ -217,31 +259,6 @@
               <item name="apps" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
@@ -289,13 +306,6 @@
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="Domain" type="462c0819:PsiDirectoryNode" />
-              <item name="Service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="Persistence" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -304,6 +314,14 @@
               <item name="core" type="462c0819:PsiDirectoryNode" />
               <item name="Persistence" type="462c0819:PsiDirectoryNode" />
               <item name="Doctrine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="Persistence" type="462c0819:PsiDirectoryNode" />
+              <item name="Doctrine" type="462c0819:PsiDirectoryNode" />
+              <item name="Mapping" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="src" type="b2602c69:ProjectViewProjectNode" />
@@ -312,53 +330,6 @@
               <item name="Persistence" type="462c0819:PsiDirectoryNode" />
               <item name="Doctrine" type="462c0819:PsiDirectoryNode" />
               <item name="Repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="Response" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="Response" type="462c0819:PsiDirectoryNode" />
-              <item name="Document" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="Response" type="462c0819:PsiDirectoryNode" />
-              <item name="Serializer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="UseCase" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="UseCase" type="462c0819:PsiDirectoryNode" />
-              <item name="AddFood" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="UseCase" type="462c0819:PsiDirectoryNode" />
-              <item name="CreateOrder" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="UseCase" type="462c0819:PsiDirectoryNode" />
-              <item name="GenerateReceipt" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -370,14 +341,19 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/core/Persistence/Doctrine/Mapping" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/core/Persistence/Doctrine/Mapping" />
       <recent name="$PROJECT_DIR$/core/Persistence" />
       <recent name="$PROJECT_DIR$/core/Persistence/Doctrine" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/core/Persistence/Doctrine/Mapping" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -420,16 +396,21 @@
       <workItem from="1557942778204" duration="3771000" />
       <workItem from="1557968220578" duration="4280000" />
       <workItem from="1557973413228" duration="194000" />
+      <workItem from="1558157400754" duration="14301000" />
+      <workItem from="1558200614921" duration="10866000" />
+      <workItem from="1558245429780" duration="464000" />
+      <workItem from="1558245927759" duration="4129000" />
+      <workItem from="1558270619480" duration="3147000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30823000" />
+    <option name="totallyTimeSpent" value="63730000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1922" height="1052" extended-state="6" />
+    <frame x="1919" y="0" width="1922" height="1081" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1814301" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22998933" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -443,7 +424,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.0625" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3291536" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -454,90 +435,160 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/UseCase/CreateOrder/CreateOrderUseCaseInterface.php">
+    <entry file="file://$PROJECT_DIR$/core/Presenter/Serializer/JmsSerializer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="37" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="37" />
+        <state relative-caret-position="210">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/UseCase/FindFood/FindFoodUseCase.php">
+    <entry file="file://$PROJECT_DIR$/core/Persistence/Doctrine/Mapping/RestoOrder.Domain.Entity.Customer.dcm.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="50" lean-forward="true" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+        <state relative-caret-position="252">
+          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/UseCase/FindOrder/FindOrderUseCaseInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/UseCase/FindOrder/FindOrderUseCase.php">
+    <entry file="file://$PROJECT_DIR$/core/Domain/Repository/CustomerRepositoryInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
-          <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
+          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/UseCase/GenerateReceipt/GenerateReceiptResponse.php">
+    <entry file="file://$PROJECT_DIR$/core/UseCase/AddFood/AddFoodUseCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/modules/client/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/modules/client/views/layouts/layout.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/modules/client/views/dashboard/foods.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="44" lean-forward="true" selection-end-line="153" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/UseCase/UpdateFood/UpdateFoodRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/Persistence/Doctrine/Repository/CustomerRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/modules/client/config/routing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1764">
+          <caret line="84" column="26" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/Domain/Service/FoodService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="54" column="41" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/Persistence/Doctrine/Mapping/RestoOrder.Domain.Entity.Coupon.dcm.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/Persistence/Doctrine/Repository/AbstractDoctrineRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/UseCase/CheckCouponDuplicate.php" />
+    <entry file="file://$PROJECT_DIR$/core/UseCase/AddCoupon/AddCouponResponse.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="30" />
+          <caret line="53" column="7" lean-forward="true" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/UseCase/GenerateReceipt/GenerateReceiptUseCaseInterface.php">
+    <entry file="file://$PROJECT_DIR$/core/Domain/Service/CouponService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="41" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="41" />
+        <state relative-caret-position="738">
+          <caret line="43" column="61" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
+          <folding>
+            <element signature="e#46#96#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/Domain/Service/InvoicingService.php" />
-    <entry file="file://$PROJECT_DIR$/core/Domain/Factory/InvoiceFactory.php" />
+    <entry file="file://$PROJECT_DIR$/core/UseCase/FindCoupon/FindCouponUseCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/UseCase/AllCoupons/AllCouponsUseCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/UseCase/AddCoupon/AddCouponRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/modules/client/controllers/web/CouponsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="21" column="68" lean-forward="true" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/UseCase/CreateOrder/CreateOrderRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+        <state relative-caret-position="357">
+          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/UseCase/UpdateFood/UpdateFoodUseCase.php">
+    <entry file="file://$PROJECT_DIR$/core/UseCase/AddCoupon/AddCouponUseCase.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
+        <state relative-caret-position="238">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#50#86#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/UseCase/UpdateFood/UpdateFoodUseCaseInterface.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/date/date_c.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="36" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/UseCase/CreateOrder/phalcon.log" />
-    <entry file="file://$PROJECT_DIR$/apps/modules/client/views/dashboard/index.volt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="176" column="24" lean-forward="true" selection-start-line="176" selection-start-column="24" selection-end-line="176" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/modules/client/Module.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="130" column="14" lean-forward="true" selection-start-line="130" selection-start-column="14" selection-end-line="130" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/modules/client/views/dashboard/orders.volt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+        <state relative-caret-position="42">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -548,93 +599,122 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/UseCase/FindOrder/FindOrderResponse.php">
+    <entry file="file://$PROJECT_DIR$/apps/modules/client/controllers/web/DashboardController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+        <state relative-caret-position="1449">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/UseCase/AllOrders/AllOrdersResponse.php">
+    <entry file="file://$PROJECT_DIR$/apps/modules/client/Module.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="29" column="33" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="33" />
+        <state relative-caret-position="1995">
+          <caret line="116" column="56" selection-start-line="116" selection-start-column="56" selection-end-line="116" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/UseCase/AllOrders/AllOrdersUseCase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/Persistence/Doctrine/Repository/FoodRepository.php">
+    <entry file="file://$PROJECT_DIR$/core/UseCase/UpdateFood/UpdateFoodUseCase.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/Persistence/Doctrine/Repository/InvoiceRepository.php">
+    <entry file="file://$PROJECT_DIR$/apps/modules/client/controllers/web/OrdersController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/Domain/Repository/OrderRepositoryInterface.php">
+    <entry file="file://$PROJECT_DIR$/apps/modules/client/controllers/api/OrdersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="528">
+          <caret line="32" column="61" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/Persistence/Doctrine/Repository/FoodOrderRepository.php">
+    <entry file="file://$PROJECT_DIR$/core/Domain/Service/OrderService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        <state relative-caret-position="391">
+          <caret line="37" column="29" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/UseCase/AllFoods/AllFoodsResponse.php">
+    <entry file="file://$PROJECT_DIR$/core/Domain/Repository/CouponRepositoryInterface.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="11" column="22" selection-start-line="11" selection-end-line="12" />
-          <folding>
-            <element signature="e#49#83#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="252">
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/Helpers/CurrencyTrait.php">
+    <entry file="file://$PROJECT_DIR$/apps/modules/client/views/dashboard/index.volt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="34" />
+        <state relative-caret-position="4263">
+          <caret line="203" column="50" selection-start-line="203" selection-start-column="50" selection-end-line="203" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/UseCase/AddFood/AddFoodResponse.php">
+    <entry file="file://$PROJECT_DIR$/core/UseCase/AllOrders/AllOrdersResponse.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        <state relative-caret-position="504">
+          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.lock">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
+    <entry file="file://$PROJECT_DIR$/core/UseCase/AllCoupons/AllCouponsResponse.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="525">
+          <caret line="25" column="371" selection-start-line="25" selection-start-column="371" selection-end-line="25" selection-end-column="371" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/modules/client/config/routing.php">
+    <entry file="file://$PROJECT_DIR$/core/Persistence/Doctrine/Mapping/RestoOrder.Domain.Entity.Order.dcm.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="64" column="33" lean-forward="true" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+        <state relative-caret-position="693">
+          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/modules/client/views/dashboard/coupons.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="87" column="22" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/UseCase/CountTotalAfterDiscount/CountTotalAfterDiscountUseCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/UseCase/CanUseDiscount/CanUseDiscountUseCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/Persistence/Doctrine/Repository/CouponRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/UseCase/FindOrder/FindOrderUseCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="39" lean-forward="true" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/UseCase/CreateOrder/CreateOrderUseCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="73" column="44" lean-forward="true" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -642,6 +722,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/Domain/Entity/Coupon.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3003">
+          <caret line="143" column="5" selection-start-line="143" selection-start-column="5" selection-end-line="143" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -654,147 +741,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/Domain/Entity/Food.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        <state relative-caret-position="189">
+          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/Domain/Entity/FoodOrder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/Domain/Entity/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/Domain/Service/FoodService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
-          <folding>
-            <element signature="e#46#103#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/UseCase/AddFood/AddFoodUseCase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/Domain/Service/OrderService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="40" column="54" lean-forward="true" selection-start-line="40" selection-start-column="54" selection-end-line="40" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/UseCase/GenerateReceipt/GenerateReceiptUseCase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="18" column="81" selection-start-line="18" selection-start-column="81" selection-end-line="18" selection-end-column="81" />
-          <folding>
-            <element signature="e#56#114#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/Response/Document/DocumentGeneratorInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/Response/Document/DomPdfDocumentGenerator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/Domain/Repository/CustomerRepositoryInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/UseCase/CreateOrder/CreateOrderUseCase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/Persistence/Doctrine/Repository/OrderRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/Persistence/Doctrine/Repository/CustomerRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/Domain/Repository/RepositoryInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" selection-start-line="8" selection-end-line="13" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/Domain/Repository/FoodOrderRepositoryInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/UseCase/AddFood/AddFoodRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/Response/Serializer/JmsSerializer.php">
+    <entry file="file://$PROJECT_DIR$/core/Domain/Entity/Invoice.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        <state relative-caret-position="210">
+          <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/Response/Serializer/SerializerInterface.php">
+    <entry file="file://$PROJECT_DIR$/core/UseCase/FindOrder/FindOrderResponse.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        <state relative-caret-position="666">
+          <caret line="38" column="38" lean-forward="true" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/Persistence/Doctrine/Repository/AbstractDoctrineRepository.php">
+    <entry file="file://$PROJECT_DIR$/core/Domain/Entity/Order.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="55" column="21" lean-forward="true" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+        <state relative-caret-position="441">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/modules/client/controllers/web/DashboardController.php">
+    <entry file="file://$PROJECT_DIR$/apps/modules/client/views/dashboard/orders.volt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="684">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/UseCase/GenerateReceipt/GenerateReceiptUseCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="109" column="134" selection-start-line="109" selection-start-column="134" selection-end-line="109" selection-end-column="134" />
+          <folding>
+            <element signature="e#56#114#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

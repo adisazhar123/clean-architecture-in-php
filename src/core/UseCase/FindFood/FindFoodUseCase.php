@@ -17,7 +17,7 @@ class FindFoodUseCase implements FindFoodUseCaseInterface
 
     public function findFood($foodId): FindFoodResponse
     {
-        $food = $this->foodRepo->getById($foodId);
+        $food = $this->foodRepo->findFood($foodId);
         return new FindFoodResponse($food->getName(), $food->getDescription(), $food->getPrice());
     }
 }

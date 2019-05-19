@@ -8,4 +8,10 @@ use RestoOrder\Domain\Repository\FoodOrderRepositoryInterface;
 class FoodOrderRepository extends AbstractDoctrineRepository implements FoodOrderRepositoryInterface
 {
     protected $entityClass = 'RestoOrder\Domain\Entity\FoodOrder';
+
+    public function addFoodOrder($foodOrder)
+    {
+        $foodOrder = $this->persist($foodOrder);
+        return $foodOrder;
+    }
 }

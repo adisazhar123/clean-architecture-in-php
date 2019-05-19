@@ -17,7 +17,7 @@ class FindOrderUseCase implements FindOrderUseCaseInterface
 
     public function findOrder($id) : FindOrderResponse
     {
-        $order = $this->orderRepository->getById($id);
+        $order = $this->orderRepository->findOrder($id);
         $findOrderResponse = new FindOrderResponse($order);
         return $findOrderResponse;
     }
