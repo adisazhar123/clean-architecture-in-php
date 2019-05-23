@@ -21,4 +21,4 @@ class DomPdfDocumentGenerator implements DocumentGeneratorInterface
         // Output the generated PDF to Browser
 //        $this->generator->stream();
     }
-}
+}   

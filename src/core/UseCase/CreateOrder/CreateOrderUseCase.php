@@ -48,7 +48,7 @@ class CreateOrderUseCase implements CreateOrderUseCaseInterface
             foreach($foods as $food) {
                 // calculate total price
                 $food_total = doubleval($food['amount']) * doubleval($food['price']);
-                error_log("food price: " . doubleval($food['price']) . "\n", 3, "/home/adisazhar/Desktop/phalcon.log");
+//                error_log("food price: " . doubleval($food['price']) . "\n", 3, "/home/adisazhar/Desktop/phalcon.log");
                 $total_price += $food_total;
             }
 
@@ -59,7 +59,7 @@ class CreateOrderUseCase implements CreateOrderUseCaseInterface
                 $cpn = $this->couponRepository->findCoupon($coupon);
                 if(!$cpn)
                 {
-                    return new CreateOrderResponse(['Coupon not found'], 'Bad Request' , 400);
+                    return new CreateOrderResponse(['Coupon not found/ active'], 'Bad Request' , 400);
                 }
                 $discountAmount = $cpn[0]->getDiscountAmount();
                 $minDate = $cpn[0]->getMinDate();
@@ -67,6 +67,7 @@ class CreateOrderUseCase implements CreateOrderUseCaseInterface
                 $minSpending = $cpn[0]->getMinSpending();
                 $active = $cpn[0]->getActive();
                 $currentDate = new \DateTime();
+                $currentDate->setTime(0, 0, 0);
 
 //                check can use coupon
                 $canUse = $this->canUseDiscountUc->canUseDiscount($minSpending, $total_price, $minDate, $maxDate, $currentDate, $active);
